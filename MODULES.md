@@ -67,7 +67,8 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - Current right overlay: `rgba(214, 218, 224, 0.68)`.
 - Current pattern speed: `7s` per rotation.
 - Current pattern stroke: pure white, `17px`.
-- Current pattern ellipse size: `rx=5`, `ry=10`.
+- Current pattern ellipse size: `rx=6.5`, `ry=12`.
+- Design target: each ellipse's inner tip should meet the matching octagon vertex smoothly. If `ry` changes, move each ellipse center along the center-to-vertex direction by the same `ry` distance.
 
 ### Zone Color Controls
 
