@@ -1,0 +1,19 @@
+{
+  "name": "HSL Ticket Mockup",
+  "short_name": "HSL",
+  "description": "A lightweight HSL ticket screen mockup.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f4f4",
+  "theme_color": "#f4f4f4",
+  "icons": [
+    {
+      "src": "./assets/icons/hsl-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
