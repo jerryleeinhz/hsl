@@ -102,39 +102,24 @@ button {
 
 .side-notch {
   position: absolute;
-  top: 99px;
+  top: 101px;
   z-index: 2;
-  width: 16px;
-  height: 32px;
-  overflow: hidden;
-  background: transparent;
-}
-
-.side-notch::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  border: 1px solid #ddd;
+  width: 29px;
+  height: 29px;
   border-radius: 50%;
   background: #f4f4f4;
 }
 
-.notch-left {
-  left: -1px;
+.side-notch::before {
+  display: none;
 }
 
-.notch-left::before {
-  left: -16px;
+.notch-left {
+  left: -15px;
 }
 
 .notch-right {
-  right: -1px;
-}
-
-.notch-right::before {
-  right: -16px;
+  right: -15px;
 }
 
 .qr-code {
@@ -191,9 +176,13 @@ button {
 }
 
 .subscription-badge svg {
-  width: 17px;
-  height: 17px;
+  width: 19px;
+  height: 19px;
   fill: currentColor;
+}
+
+.subscription-badge .gear-hole {
+  fill: #fff;
 }
 
 .divider,
@@ -211,7 +200,7 @@ button {
   color: #37373a;
   background: #fff;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -227,6 +216,14 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   background: transparent;
+}
+
+.ticket-title strong {
+  font-weight: 900;
+}
+
+.ticket-title .title-rest {
+  font-weight: 400;
 }
 
 .title-divider {
@@ -301,7 +298,7 @@ button {
   stroke: rgba(255, 255, 255, 0.96);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 8;
+  stroke-width: 11;
 }
 
 .zone-pattern polygon,
@@ -471,8 +468,8 @@ button {
 }
 
 .bottom-nav svg {
-  width: 31px;
-  height: 31px;
+  width: 32px;
+  height: 32px;
   fill: currentColor;
 }
 
