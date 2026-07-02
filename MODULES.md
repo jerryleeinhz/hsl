@@ -64,10 +64,10 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - HTML: `.zone-card`, `.zone-pattern`, `.zone-color-panel`, `.zone-copy`, `.zone-letters`, `.zone-label`
 - CSS: `.zone-card`, `.zone-pattern`, `.zone-pattern-spin`, `.zone-copy`
 - Left and right sections are a single shared background color; right side has a semi-transparent gray overlay.
-- Current right overlay: `rgba(214, 218, 224, 0.68)`.
+- Current right overlay: `rgba(199, 202, 207, 0.8)`.
 - Current pattern speed: `7s` per rotation.
 - Current pattern stroke: pure white, `17px`.
-- Current pattern ellipse size: `rx=6.5`, `ry=12`.
+- Current pattern ellipse size: `rx=7.5`, `ry=14`.
 - Design target: each ellipse's inner tip should meet the matching octagon vertex smoothly. If `ry` changes, move each ellipse center along the center-to-vertex direction by the same `ry` distance.
 
 ### Zone Color Controls
