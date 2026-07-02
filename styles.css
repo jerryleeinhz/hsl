@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --zone-color: #357fca;
+  --zone-pattern-size: min(430px, 100vw);
+}
+
 html,
 body {
   margin: 0;
@@ -98,30 +103,46 @@ button {
 .side-notch {
   position: absolute;
   top: 99px;
-  width: 14px;
-  height: 28px;
+  z-index: 2;
+  width: 16px;
+  height: 32px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.side-notch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 32px;
   border: 1px solid #ddd;
+  border-radius: 50%;
   background: #f4f4f4;
 }
 
 .notch-left {
   left: -1px;
-  border-left: 0;
-  border-radius: 0 16px 16px 0;
+}
+
+.notch-left::before {
+  left: -16px;
 }
 
 .notch-right {
   right: -1px;
-  border-right: 0;
-  border-radius: 16px 0 0 16px;
+}
+
+.notch-right::before {
+  right: -16px;
 }
 
 .qr-code {
-  width: 134px;
-  height: 134px;
+  width: 145px;
+  height: 145px;
   display: grid;
-  grid-template-columns: repeat(33, 1fr);
-  grid-template-rows: repeat(33, 1fr);
+  grid-template-columns: repeat(45, 1fr);
+  grid-template-rows: repeat(45, 1fr);
   margin: 0 auto 26px;
   background: #fff;
 }
@@ -259,50 +280,55 @@ button {
   grid-template-columns: 46% 54%;
   overflow: hidden;
   border-radius: 0 0 8px 8px;
-  background: #f5f5f6;
+  background: var(--zone-color);
 }
 
-.zone-blue {
+.zone-color-panel {
   position: relative;
-  overflow: hidden;
-  background: #357fca;
+  z-index: 2;
 }
 
-.zone-mark {
+.zone-pattern {
   position: absolute;
-  inset: -8px -42px -70px -17px;
-  width: calc(100% + 56px);
-  height: calc(100% + 78px);
-  fill: #fff;
+  z-index: 1;
+  left: 50%;
+  top: calc(var(--zone-pattern-size) * -0.58);
+  width: var(--zone-pattern-size);
+  height: var(--zone-pattern-size);
+  transform: translateX(-50%);
+  overflow: visible;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.96);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 8;
+}
+
+.zone-pattern polygon,
+.zone-pattern ellipse {
+  vector-effect: non-scaling-stroke;
+}
+
+.zone-pattern-spin {
+  transform-origin: 100px 100px;
+  animation: zone-spin 10s linear infinite;
+}
+
+@keyframes zone-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .zone-copy {
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.faint-ring {
-  position: absolute;
-  border: 22px solid rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-}
-
-.ring-one {
-  width: 146px;
-  height: 146px;
-  right: -38px;
-  top: -61px;
-}
-
-.ring-two {
-  width: 118px;
-  height: 118px;
-  left: 18px;
-  bottom: -58px;
+  background: rgba(245, 245, 246, 0.84);
 }
 
 .zone-letters {
@@ -377,13 +403,45 @@ button {
 
 .purchase-history {
   display: block;
-  margin: 18px 0 94px;
+  margin: 18px 0 22px;
   color: #0786c8;
   text-align: center;
   text-decoration: none;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.2;
+}
+
+.color-controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 96px;
+}
+
+.color-button {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #357fca;
+  box-shadow: 0 0 0 1px #d4d4d4;
+}
+
+.color-button.red {
+  background: #d84a3f;
+}
+
+.color-button.green {
+  background: #30a95a;
+}
+
+.color-button.yellow {
+  background: #e8b72e;
+}
+
+.color-button.is-selected {
+  box-shadow: 0 0 0 3px #347dca;
 }
 
 .bottom-nav {

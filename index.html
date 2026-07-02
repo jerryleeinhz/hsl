@@ -54,17 +54,39 @@
               </div>
             </div>
 
-            <div class="zone-card">
-              <div class="zone-blue">
-                <svg class="zone-mark" viewBox="0 0 230 172" preserveAspectRatio="none" aria-hidden="true">
-                  <path d="M-18 0h90c0 27-18 46-43 46-26 0-47-20-47-46Z" />
-                  <path d="M159 -24c32 47 62 84 95 116l-35 35c-36-33-70-78-104-132l44-19Z" />
-                  <path d="M115 48c-38 25-67 50-87 83-21 34-24 66-8 88 11 14 28 19 48 15 26-5 51-25 65-55 15-30 16-65 5-99l48-14c15 48 12 98-9 141-22 44-60 75-101 83-39 8-73-5-94-34-31-41-25-93 5-142 26-42 63-74 110-105l18 39Z" />
-                </svg>
+            <div class="zone-card" id="zoneCard">
+              <svg class="zone-pattern" viewBox="0 0 200 200" aria-hidden="true">
+                <g class="zone-pattern-spin">
+                  <polygon points="100 30 150 50 170 100 150 150 100 170 50 150 30 100 50 50" />
+                  <g transform="translate(100 30)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(150 50) rotate(45)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(170 100) rotate(90)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(150 150) rotate(135)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(100 170) rotate(180)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(50 150) rotate(225)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(30 100) rotate(270)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                  <g transform="translate(50 50) rotate(315)">
+                    <ellipse rx="10" ry="17" />
+                  </g>
+                </g>
+              </svg>
+              <div class="zone-color-panel">
               </div>
               <div class="zone-copy">
-                <span class="faint-ring ring-one"></span>
-                <span class="faint-ring ring-two"></span>
                 <div class="zone-letters">AB</div>
                 <div class="zone-label">
                   <span>i</span>
@@ -82,6 +104,12 @@
           <div class="lower-divider"></div>
           <p class="previous-copy">Previous purchases of tickets</p>
           <a class="purchase-history" href="#" aria-label="Open purchase history">Purchase history ›</a>
+          <div class="color-controls" aria-label="Zone background color">
+            <button type="button" class="color-button is-selected" data-zone-color="#357fca" aria-label="Blue background"></button>
+            <button type="button" class="color-button red" data-zone-color="#d84a3f" aria-label="Red background"></button>
+            <button type="button" class="color-button green" data-zone-color="#30a95a" aria-label="Green background"></button>
+            <button type="button" class="color-button yellow" data-zone-color="#e8b72e" aria-label="Yellow background"></button>
+          </div>
         </main>
 
         <footer class="bottom-nav" aria-label="Main navigation">
@@ -120,7 +148,7 @@
 
     <script>
       const qr = document.getElementById("qrCode");
-      const size = 33;
+      const size = 45;
       const black = new Set();
 
       function addFinder(startX, startY) {
@@ -144,8 +172,8 @@
             (x > size - 9 && y < 8) ||
             (x < 8 && y > size - 9);
           if (!nearFinder) {
-            const value = (x * 17 + y * 31 + x * y * 7 + (x % 5) * 13) % 19;
-            if (value < 8 || (x + y) % 11 === 0 || (x * y) % 23 === 3) {
+            const value = (x * 17 + y * 31 + x * y * 7 + (x % 5) * 13 + (y % 7) * 11) % 29;
+            if (value < 13 || (x + y) % 9 === 0 || (x * y) % 23 === 3 || (x * 3 + y * 5) % 31 === 4) {
               black.add(`${x},${y}`);
             }
           }
@@ -154,6 +182,14 @@
           qr.appendChild(cell);
         }
       }
+
+      document.querySelectorAll(".color-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.documentElement.style.setProperty("--zone-color", button.dataset.zoneColor);
+          document.querySelectorAll(".color-button").forEach((item) => item.classList.remove("is-selected"));
+          button.classList.add("is-selected");
+        });
+      });
     </script>
   </body>
 </html>
