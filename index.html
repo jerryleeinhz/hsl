@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HSL Ticket Mockup</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="app-screen" aria-label="HSL ticket app mockup">
+        <nav class="ticket-tabs" aria-label="Ticket sections">
+          <button type="button" class="tab-button inactive">Buy a ticket</button>
+          <button type="button" class="tab-button active">Your tickets</button>
+        </nav>
+
+        <main class="content">
+          <section class="ticket-card" aria-label="Season ticket">
+            <span class="side-notch notch-left" aria-hidden="true"></span>
+            <span class="side-notch notch-right" aria-hidden="true"></span>
+
+            <div class="qr-code" id="qrCode" aria-hidden="true"></div>
+
+            <div class="ticket-meta">
+              <div class="ticket-number"><strong>011901</strong> 58574529</div>
+              <div class="subscription-badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Zm9.5 4.9v-2.2l-2.5-.5a7.6 7.6 0 0 0-.8-1.9l1.4-2.1-1.6-1.6-2.1 1.4a8 8 0 0 0-1.9-.8L13.1 3h-2.2l-.5 2.5a8 8 0 0 0-1.9.8L6.4 4.9 4.9 6.4l1.4 2.1a8 8 0 0 0-.8 1.9l-2.5.5v2.2l2.5.5c.2.7.5 1.3.8 1.9l-1.4 2.1 1.6 1.6 2.1-1.4c.6.3 1.2.6 1.9.8l.5 2.5h2.2l.5-2.5c.7-.2 1.3-.5 1.9-.8l2.1 1.4 1.6-1.6-1.4-2.1c.3-.6.6-1.2.8-1.9l2.5-.5Z" />
+                </svg>
+                <span>SUBSCRIPTION</span>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="ticket-title">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 2h2v3H6V2Zm8 0h2v3h-2V2Z" />
+                <path d="M4.3 4h17.4c.7 0 1.3.6 1.3 1.3v17.4c0 .7-.6 1.3-1.3 1.3H4.3c-.7 0-1.3-.6-1.3-1.3V5.3C3 4.6 3.6 4 4.3 4Zm1.4 7.2h3v3h-3v-3Zm4.7 0h3v3h-3v-3Zm4.7 0h3v3h-3v-3Zm-9.4 4.5h3v3h-3v-3Zm4.7 0h3v3h-3v-3Zm4.7 0h3v3h-3v-3ZM5 8h18V6.5H5V8Z" />
+              </svg>
+              <span>SEASON TICKET - Auto-renewing s...</span>
+            </div>
+
+            <div class="divider title-divider"></div>
+
+            <div class="details-row">
+              <div>
+                <p class="label">Valid</p>
+                <p class="value status-value"><span></span>Until further notice</p>
+              </div>
+              <div class="customer">
+                <p class="label">Customer group</p>
+                <p class="value">Adult</p>
+              </div>
+            </div>
+
+            <div class="zone-card">
+              <div class="zone-blue">
+                <svg class="zone-mark" viewBox="0 0 230 172" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M-18 0h90c0 27-18 46-43 46-26 0-47-20-47-46Z" />
+                  <path d="M159 -24c32 47 62 84 95 116l-35 35c-36-33-70-78-104-132l44-19Z" />
+                  <path d="M115 48c-38 25-67 50-87 83-21 34-24 66-8 88 11 14 28 19 48 15 26-5 51-25 65-55 15-30 16-65 5-99l48-14c15 48 12 98-9 141-22 44-60 75-101 83-39 8-73-5-94-34-31-41-25-93 5-142 26-42 63-74 110-105l18 39Z" />
+                </svg>
+              </div>
+              <div class="zone-copy">
+                <span class="faint-ring ring-one"></span>
+                <span class="faint-ring ring-two"></span>
+                <div class="zone-letters">AB</div>
+                <div class="zone-label">
+                  <span>i</span>
+                  Zones
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="friend-ticket">
+            <p>Do you need a ticket for a friend,<br />too?</p>
+            <button type="button">Buy a new ticket</button>
+          </section>
+
+          <div class="lower-divider"></div>
+          <p class="previous-copy">Previous purchases of tickets</p>
+          <a class="purchase-history" href="#" aria-label="Open purchase history">Purchase history ›</a>
+        </main>
+
+        <footer class="bottom-nav" aria-label="Main navigation">
+          <button type="button">
+            <svg viewBox="0 0 28 28" aria-hidden="true">
+              <path d="M3 13.3 14 3l11 10.3v12.2H17v-7h-6v7H3V13.3Z" />
+              <path d="M10 20.5h3v3h-3v-3Zm5 0h3v3h-3v-3Z" class="cutout" />
+            </svg>
+            <span>HOME</span>
+          </button>
+          <button type="button" class="selected">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M7 5h15v19H7V5Zm4 4h8v2h-8V9Zm0 4h8v2h-8v-2Zm0 4h6v2h-6v-2Z" />
+              <path d="M15 10h11v18H15V10Zm3 4h6v2h-6v-2Zm0 4h6v2h-6v-2Zm0 4h4v2h-4v-2Z" opacity=".9" />
+              <circle cx="10" cy="7" r="1.4" class="cutout" />
+              <circle cx="13.5" cy="7" r="1.4" class="cutout" />
+            </svg>
+            <span>TICKETS</span>
+          </button>
+          <button type="button">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M10 5a5 5 0 0 0-5 5c0 4.3 5 9 5 9s5-4.7 5-9a5 5 0 0 0-5-5Zm0 6.8a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6Zm13-4.8a4 4 0 0 0-4 4c0 3.5 4 7.5 4 7.5s4-4 4-7.5a4 4 0 0 0-4-4Zm0 5.4a1.4 1.4 0 1 1 0-2.8 1.4 1.4 0 0 1 0 2.8Z" />
+              <path d="M12 23c5.5-5 10.4 3.3 16-2.7" fill="none" stroke="currentColor" stroke-dasharray="2.2 2.2" stroke-linecap="round" stroke-width="2.4" />
+            </svg>
+            <span>ROUTES</span>
+          </button>
+          <button type="button">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M5 8h22v3H5V8Zm0 9h22v3H5v-3Zm0 9h22v3H5v-3Z" />
+            </svg>
+            <span>MORE</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      const qr = document.getElementById("qrCode");
+      const size = 33;
+      const black = new Set();
+
+      function addFinder(startX, startY) {
+        for (let y = 0; y < 7; y += 1) {
+          for (let x = 0; x < 7; x += 1) {
+            const edge = x === 0 || x === 6 || y === 0 || y === 6;
+            const center = x >= 2 && x <= 4 && y >= 2 && y <= 4;
+            if (edge || center) black.add(`${startX + x},${startY + y}`);
+          }
+        }
+      }
+
+      addFinder(0, 0);
+      addFinder(size - 7, 0);
+      addFinder(0, size - 7);
+
+      for (let y = 0; y < size; y += 1) {
+        for (let x = 0; x < size; x += 1) {
+          const nearFinder =
+            (x < 8 && y < 8) ||
+            (x > size - 9 && y < 8) ||
+            (x < 8 && y > size - 9);
+          if (!nearFinder) {
+            const value = (x * 17 + y * 31 + x * y * 7 + (x % 5) * 13) % 19;
+            if (value < 8 || (x + y) % 11 === 0 || (x * y) % 23 === 3) {
+              black.add(`${x},${y}`);
+            }
+          }
+          const cell = document.createElement("span");
+          if (black.has(`${x},${y}`)) cell.className = "is-dark";
+          qr.appendChild(cell);
+        }
+      }
+    </script>
+  </body>
+</html>
