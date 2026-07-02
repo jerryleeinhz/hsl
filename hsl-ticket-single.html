@@ -322,7 +322,7 @@ button {
 
 .zone-pattern-spin {
   transform-origin: 100px 100px;
-  animation: zone-spin 10s linear infinite;
+  animation: zone-spin 7s linear infinite;
 }
 
 @keyframes zone-spin {
@@ -339,7 +339,7 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: rgba(245, 245, 246, 0.84);
+  background: rgba(214, 218, 224, 0.68);
 }
 
 .zone-letters {
@@ -580,28 +580,28 @@ button {
                 <g class="zone-pattern-spin">
                   <polygon points="100 54 133 67 146 100 133 133 100 146 67 133 54 100 67 67" />
                   <g transform="translate(100 36)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(146 54) rotate(45)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(164 100) rotate(90)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(146 146) rotate(135)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(100 164) rotate(180)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(54 146) rotate(225)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(36 100) rotate(270)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                   <g transform="translate(54 54) rotate(315)">
-                    <ellipse rx="10" ry="18" />
+                    <ellipse rx="8" ry="15" />
                   </g>
                 </g>
               </svg>
@@ -717,7 +717,9 @@ button {
 
       if ("serviceWorker" in navigator && location.protocol !== "file:") {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./service-worker.js");
+          navigator.serviceWorker.register("./service-worker.js", { updateViaCache: "none" }).then((registration) => {
+            registration.update();
+          });
         });
       }
     </script>

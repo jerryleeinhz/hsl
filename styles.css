@@ -308,7 +308,7 @@ button {
 
 .zone-pattern-spin {
   transform-origin: 100px 100px;
-  animation: zone-spin 10s linear infinite;
+  animation: zone-spin 7s linear infinite;
 }
 
 @keyframes zone-spin {
@@ -325,7 +325,7 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: rgba(245, 245, 246, 0.84);
+  background: rgba(214, 218, 224, 0.68);
 }
 
 .zone-letters {
