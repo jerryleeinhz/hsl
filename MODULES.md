@@ -67,6 +67,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - Current right overlay: `rgba(214, 218, 224, 0.68)`.
 - Current pattern speed: `7s` per rotation.
 - Current pattern stroke: pure white, `17px`.
+- Current pattern ellipse size: `rx=5`, `ry=10`.
 
 ### Zone Color Controls
 
