@@ -333,6 +333,7 @@ button {
   z-index: 1;
   margin-top: 6px;
   color: #333;
+  font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
   font-size: 62px;
   font-weight: 900;
   line-height: 0.9;
@@ -430,7 +431,7 @@ button {
 }
 
 .color-button.orange {
-  background: #eb6e34;
+  background: #f36a25;
 }
 
 .color-button.green {

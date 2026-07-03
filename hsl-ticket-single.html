@@ -347,6 +347,7 @@ button {
   z-index: 1;
   margin-top: 6px;
   color: #333;
+  font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
   font-size: 62px;
   font-weight: 900;
   line-height: 0.9;
@@ -444,7 +445,7 @@ button {
 }
 
 .color-button.orange {
-  background: #eb6e34;
+  background: #f36a25;
 }
 
 .color-button.green {
@@ -632,7 +633,7 @@ button {
           <div class="color-controls" aria-label="Zone background color">
             <button type="button" class="color-button is-selected" data-zone-color="#357fca" aria-label="Blue background"></button>
             <button type="button" class="color-button red" data-zone-color="#d84a3f" aria-label="Red background"></button>
-            <button type="button" class="color-button orange" data-zone-color="#eb6e34" aria-label="Orange background"></button>
+            <button type="button" class="color-button orange" data-zone-color="#f36a25" aria-label="Orange background"></button>
             <button type="button" class="color-button green" data-zone-color="#30a95a" aria-label="Green background"></button>
             <button type="button" class="color-button yellow" data-zone-color="#e8b72e" aria-label="Yellow background"></button>
           </div>
@@ -714,6 +715,9 @@ button {
 
       const colorButtons = Array.from(document.querySelectorAll(".color-button"));
       const zoneColorStorageKey = "hsl-zone-color";
+      const zoneColorAliases = {
+        "#eb6e34": "#f36a25"
+      };
 
       function loadZoneColor() {
         try {
@@ -740,8 +744,9 @@ button {
       }
 
       const savedZoneColor = loadZoneColor();
-      const savedColorButton = colorButtons.find((button) => button.dataset.zoneColor === savedZoneColor);
-      if (savedColorButton) applyZoneColor(savedColorButton, false);
+      const normalizedSavedZoneColor = zoneColorAliases[savedZoneColor] || savedZoneColor;
+      const savedColorButton = colorButtons.find((button) => button.dataset.zoneColor === normalizedSavedZoneColor);
+      if (savedColorButton) applyZoneColor(savedColorButton, normalizedSavedZoneColor !== savedZoneColor);
 
       colorButtons.forEach((button) => {
         button.addEventListener("click", () => applyZoneColor(button));
