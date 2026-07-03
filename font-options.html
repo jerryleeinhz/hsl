@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ABC Font Options</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f4f4;
+        color: #333;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      }
+
+      main {
+        max-width: 430px;
+        margin: 0 auto;
+        padding: 20px 18px 36px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .option {
+        margin-bottom: 18px;
+      }
+
+      .name {
+        margin: 0 0 8px;
+        color: #666;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .zone-card {
+        height: 132px;
+        display: grid;
+        grid-template-columns: 46% 54%;
+        overflow: hidden;
+        border-radius: 0 0 8px 8px;
+        background: #f36a25;
+      }
+
+      .left {
+        position: relative;
+      }
+
+      .left::before {
+        content: "";
+        position: absolute;
+        left: 26px;
+        top: -12px;
+        width: 150px;
+        height: 150px;
+        border: 18px solid #fff;
+        border-radius: 50%;
+        transform: rotate(22deg);
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(249, 249, 251, 0.985);
+      }
+
+      .letters {
+        margin-top: 6px;
+        color: #333;
+        font-size: 70px;
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: 0;
+      }
+
+      .zones {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 4px;
+        color: #347dca;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
+      .zones span {
+        width: 18px;
+        height: 18px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #347dca;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .a .letters {
+        font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
+      }
+
+      .b .letters {
+        font-family: "SF Pro Rounded", ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
+      }
+
+      .c .letters {
+        font-family: "Arial Rounded MT Bold", ui-rounded, "Trebuchet MS", Arial, sans-serif;
+      }
+
+      .d .letters {
+        font-family: "Trebuchet MS", ui-rounded, Avenir, Arial, sans-serif;
+      }
+
+      .e .letters {
+        font-family: Avenir, "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>ABC font options</h1>
+
+      <section class="option a">
+        <p class="name">A. Current rounded stack</p>
+        <div class="zone-card">
+          <div class="left"></div>
+          <div class="right"><div class="letters">ABC</div><div class="zones"><span>i</span>Zones</div></div>
+        </div>
+      </section>
+
+      <section class="option b">
+        <p class="name">B. SF Pro Rounded first</p>
+        <div class="zone-card">
+          <div class="left"></div>
+          <div class="right"><div class="letters">ABC</div><div class="zones"><span>i</span>Zones</div></div>
+        </div>
+      </section>
+
+      <section class="option c">
+        <p class="name">C. Arial Rounded MT Bold first</p>
+        <div class="zone-card">
+          <div class="left"></div>
+          <div class="right"><div class="letters">ABC</div><div class="zones"><span>i</span>Zones</div></div>
+        </div>
+      </section>
+
+      <section class="option d">
+        <p class="name">D. Trebuchet MS first</p>
+        <div class="zone-card">
+          <div class="left"></div>
+          <div class="right"><div class="letters">ABC</div><div class="zones"><span>i</span>Zones</div></div>
+        </div>
+      </section>
+
+      <section class="option e">
+        <p class="name">E. Avenir first</p>
+        <div class="zone-card">
+          <div class="left"></div>
+          <div class="right"><div class="letters">ABC</div><div class="zones"><span>i</span>Zones</div></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
