@@ -69,7 +69,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - Current pattern stroke: pure white, `17px`.
 - Current pattern ellipse size: `rx=7.5`, `ry=12`.
 - Design target: each ellipse's inner tip should meet the matching octagon vertex smoothly. If `ry` changes, move each ellipse center along the center-to-vertex direction by the same `ry` distance.
-- Zone letters font: `Trebuchet MS`, then `Avenir`, then `Avenir Next`; `60px`, `900` weight. This is rounder than Avenir but less bubbly than `ui-rounded`/`Arial Rounded`.
+- Zone letters font: `ui-rounded`, then `SF Pro Rounded`, then `Arial Rounded MT Bold`; `60px`, `900` weight.
 
 ### Zone Color Controls
 
