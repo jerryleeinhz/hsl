@@ -64,7 +64,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - HTML: `.zone-card`, `.zone-pattern`, `.zone-color-panel`, `.zone-copy`, `.zone-letters`, `.zone-label`
 - CSS: `.zone-card`, `.zone-pattern`, `.zone-pattern-spin`, `.zone-copy`
 - Left and right sections are a single shared background color; right side has a semi-transparent gray overlay.
-- Current right overlay: `rgba(199, 202, 207, 0.8)`.
+- Current right overlay: `rgba(249, 249, 251, 0.985)`.
 - Current pattern speed: `7s` per rotation.
 - Current pattern stroke: pure white, `17px`.
 - Current pattern ellipse size: `rx=7.5`, `ry=14`.
@@ -75,7 +75,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - HTML: `.color-controls`, `.color-button`
 - JS: button click handler near the bottom of `index.html`
 - CSS variable: `--zone-color`
-- Current colors: blue, red, green, yellow.
+- Current colors: blue, red, orange (`#eb6e34`, sampled from the target ticket image), green, yellow.
 
 ### Bottom Navigation
 
