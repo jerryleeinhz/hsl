@@ -67,7 +67,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - Current right overlay: `rgba(249, 249, 251, 0.985)`.
 - Current pattern speed: `7s` per rotation.
 - Current pattern stroke: pure white, `17px`.
-- Current pattern ellipse size: `rx=7.5`, `ry=14`.
+- Current pattern ellipse size: `rx=7.5`, `ry=12`.
 - Design target: each ellipse's inner tip should meet the matching octagon vertex smoothly. If `ry` changes, move each ellipse center along the center-to-vertex direction by the same `ry` distance.
 
 ### Zone Color Controls
@@ -75,6 +75,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - HTML: `.color-controls`, `.color-button`
 - JS: button click handler near the bottom of `index.html`
 - CSS variable: `--zone-color`
+- Storage key: `hsl-zone-color` in `localStorage`, used to restore the last selected color on reopen.
 - Current colors: blue, red, orange (`#eb6e34`, sampled from the target ticket image), green, yellow.
 
 ### Bottom Navigation

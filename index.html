@@ -66,29 +66,29 @@
               <svg class="zone-pattern" viewBox="0 0 200 200" aria-hidden="true">
                 <g class="zone-pattern-spin">
                   <polygon points="100 54 133 67 146 100 133 133 100 146 67 133 54 100 67 67" />
-                  <g transform="translate(100 40)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(100 42)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(142.899 57.101) rotate(45)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(141.485 58.515) rotate(45)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(160 100) rotate(90)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(158 100) rotate(90)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(142.899 142.899) rotate(135)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(141.485 141.485) rotate(135)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(100 160) rotate(180)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(100 158) rotate(180)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(57.101 142.899) rotate(225)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(58.515 141.485) rotate(225)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(40 100) rotate(270)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(42 100) rotate(270)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
-                  <g transform="translate(57.101 57.101) rotate(315)">
-                    <ellipse rx="7.5" ry="14" />
+                  <g transform="translate(58.515 58.515) rotate(315)">
+                    <ellipse rx="7.5" ry="12" />
                   </g>
                 </g>
               </svg>
@@ -195,12 +195,39 @@
         }
       }
 
-      document.querySelectorAll(".color-button").forEach((button) => {
-        button.addEventListener("click", () => {
-          document.documentElement.style.setProperty("--zone-color", button.dataset.zoneColor);
-          document.querySelectorAll(".color-button").forEach((item) => item.classList.remove("is-selected"));
-          button.classList.add("is-selected");
-        });
+      const colorButtons = Array.from(document.querySelectorAll(".color-button"));
+      const zoneColorStorageKey = "hsl-zone-color";
+
+      function loadZoneColor() {
+        try {
+          return localStorage.getItem(zoneColorStorageKey);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function saveZoneColor(color) {
+        try {
+          localStorage.setItem(zoneColorStorageKey, color);
+        } catch (error) {
+          // Ignore storage failures; the color switcher still works for the current session.
+        }
+      }
+
+      function applyZoneColor(button, shouldSave = true) {
+        const color = button.dataset.zoneColor;
+        document.documentElement.style.setProperty("--zone-color", color);
+        colorButtons.forEach((item) => item.classList.remove("is-selected"));
+        button.classList.add("is-selected");
+        if (shouldSave) saveZoneColor(color);
+      }
+
+      const savedZoneColor = loadZoneColor();
+      const savedColorButton = colorButtons.find((button) => button.dataset.zoneColor === savedZoneColor);
+      if (savedColorButton) applyZoneColor(savedColorButton, false);
+
+      colorButtons.forEach((button) => {
+        button.addEventListener("click", () => applyZoneColor(button));
       });
 
       if ("serviceWorker" in navigator && location.protocol !== "file:") {
