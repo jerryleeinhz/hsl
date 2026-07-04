@@ -64,7 +64,7 @@
 
             <div class="zone-card" id="zoneCard">
               <svg class="zone-pattern" viewBox="0 0 200 200" aria-hidden="true">
-                <g class="zone-pattern-spin">
+                <g>
                   <polygon points="100 54 133 67 146 100 133 133 100 146 67 133 54 100 67 67" />
                   <g transform="translate(100 42)">
                     <ellipse rx="7.5" ry="12" />
@@ -178,6 +178,7 @@
       addFinder(size - 7, 0);
       addFinder(0, size - 7);
 
+      const qrPath = [];
       for (let y = 0; y < size; y += 1) {
         for (let x = 0; x < size; x += 1) {
           const nearFinder =
@@ -190,11 +191,18 @@
               black.add(`${x},${y}`);
             }
           }
-          const cell = document.createElement("span");
-          if (black.has(`${x},${y}`)) cell.className = "is-dark";
-          qr.appendChild(cell);
+          if (black.has(`${x},${y}`)) qrPath.push(`M${x} ${y}h1v1h-1z`);
         }
       }
+
+      const qrSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const qrShape = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      qrSvg.setAttribute("viewBox", `0 0 ${size} ${size}`);
+      qrSvg.setAttribute("aria-hidden", "true");
+      qrSvg.setAttribute("focusable", "false");
+      qrShape.setAttribute("d", qrPath.join(""));
+      qrSvg.appendChild(qrShape);
+      qr.appendChild(qrSvg);
 
       const colorButtons = Array.from(document.querySelectorAll(".color-button"));
       const zoneColorStorageKey = "hsl-zone-color";
