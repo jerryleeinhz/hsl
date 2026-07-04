@@ -431,6 +431,10 @@ button {
   background: #d84a3f;
 }
 
+.color-button.cyan {
+  background: #02b8e5;
+}
+
 .color-button.orange {
   background: #f36a25;
 }
