@@ -79,7 +79,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - JS: button click handler near the bottom of `index.html`
 - CSS variable: `--zone-color`
 - Storage key: `hsl-zone-color` in `localStorage`, used to restore the last selected color on reopen.
-- Current colors: blue, cyan (`#02b8e5`, sampled from `assets/reference/design-target3.png`), red, orange (`#f36a25`, brighter/saturated sample from the target ticket image), green, yellow.
+- Current colors: blue, cyan (`#02b8e5`, sampled from `assets/reference/design-target3.png`), magenta (`#dc0451`, sampled from `assets/reference/design-target4.png`), red, orange (`#f36a25`, brighter/saturated sample from the target ticket image), green, yellow.
 - Orange color migration: old saved `#eb6e34` values are mapped to `#f36a25` on reopen.
 
 ### Bottom Navigation

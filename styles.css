@@ -443,6 +443,10 @@ button {
   background: #02b8e5;
 }
 
+.color-button.magenta {
+  background: #dc0451;
+}
+
 .color-button.orange {
   background: #f36a25;
 }

@@ -1,4 +1,4 @@
-const CACHE_NAME = "hsl-ticket-v14";
+const CACHE_NAME = "hsl-ticket-v15";
 const APP_SHELL = [
   "./",
   "./index.html",
