@@ -421,8 +421,9 @@ button {
 
 .color-controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
+  gap: 12px clamp(8px, 3vw, 14px);
   margin: 0 0 96px;
 }
 
@@ -453,6 +454,10 @@ button {
 
 .color-button.green {
   background: #30a95a;
+}
+
+.color-button.bright-yellow {
+  background: #fed200;
 }
 
 .color-button.yellow {
