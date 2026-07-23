@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="HSL" />
-    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="manifest" href="./manifest.webmanifest?v=19" />
     <link rel="icon" href="./assets/icons/hsl-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="./assets/icons/hsl-icon.svg" />
     <style>
@@ -792,7 +792,7 @@ button {
 
       if ("serviceWorker" in navigator && location.protocol !== "file:") {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./service-worker.js", { updateViaCache: "none" }).then((registration) => {
+          navigator.serviceWorker.register("./service-worker.js?v=19", { updateViaCache: "none" }).then((registration) => {
             registration.update();
           });
         });

@@ -115,5 +115,6 @@ GitHub Pages serves the app publicly. After changes are pushed:
 
 1. GitHub Pages redeploys the static files.
 2. The phone-installed PWA may still use cached files briefly.
-3. Bumping `CACHE_NAME` in `service-worker.js` forces the app shell cache to refresh.
+3. Bump the shared version in `CACHE_NAME` and the `?v=` asset URLs in `index.html`,
+   `hsl-ticket-single.html`, and `service-worker.js` whenever visible files change.
 4. On iPhone, close and reopen the home-screen app if the update does not appear immediately.

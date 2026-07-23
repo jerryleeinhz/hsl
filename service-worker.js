@@ -1,9 +1,9 @@
-const CACHE_NAME = "hsl-ticket-v18";
+const CACHE_NAME = "hsl-ticket-v19";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./manifest.webmanifest",
+  "./styles.css?v=19",
+  "./manifest.webmanifest?v=19",
   "./assets/icons/hsl-icon.svg"
 ];
 
@@ -25,12 +25,12 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-store" })
       .then((response) => {
         const copy = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return response;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() => caches.match(event.request, { ignoreSearch: true }))
   );
 });
