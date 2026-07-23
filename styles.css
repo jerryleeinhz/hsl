@@ -345,6 +345,14 @@ button {
   flex: 0 0 auto;
   margin-top: 6px;
   color: #333;
+  overflow: visible;
+}
+
+.zone-letters path {
+  stroke: currentColor;
+  stroke-width: 0.75px;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
 }
 
 .zone-label {
