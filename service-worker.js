@@ -1,9 +1,9 @@
-const CACHE_NAME = "hsl-ticket-v19";
+const CACHE_NAME = "hsl-ticket-v20";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=19",
-  "./manifest.webmanifest?v=19",
+  "./styles.css?v=20",
+  "./manifest.webmanifest?v=20",
   "./assets/icons/hsl-icon.svg"
 ];
 

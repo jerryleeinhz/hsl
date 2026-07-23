@@ -71,7 +71,7 @@ When changing `index.html` or `styles.css`, regenerate `hsl-ticket-single.html` 
 - Current pattern ellipse size: `rx=7.5`, `ry=12`.
 - Design target: each ellipse's inner tip should meet the matching octagon vertex smoothly. If `ry` changes, move each ellipse center along the center-to-vertex direction by the same `ry` distance.
 - Performance target: animate the outer `.zone-pattern` SVG transform, not inner SVG groups, so mobile browsers can composite the rotating layer with less repaint work.
-- Zone letters font: `SF Pro Rounded`, then `ui-rounded`, then `Arial Rounded MT Bold`; `65px`, `800` weight. `Zones` label is offset down by `4px` and uses regular weight.
+- Zone letters `ABC`: fixed inline SVG outlines in both `index.html` and `hsl-ticket-single.html`. The outlines preserve the approved Arial Rounded MT Bold 65px appearance at a fixed width of 141.616px and a 58.5px layout height, so iPhone and Mac render the same shapes without system-font substitution. The `Zones` label is offset down by `4px` and uses regular weight.
 
 ### Zone Color Controls
 

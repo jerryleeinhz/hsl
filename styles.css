@@ -339,13 +339,12 @@ button {
 .zone-letters {
   position: relative;
   z-index: 1;
+  width: 141.616px;
+  height: 58.5px;
+  display: block;
+  flex: 0 0 auto;
   margin-top: 6px;
   color: #333;
-  font-family: "SF Pro Rounded", ui-rounded, "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
-  font-size: 65px;
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: 0;
 }
 
 .zone-label {
